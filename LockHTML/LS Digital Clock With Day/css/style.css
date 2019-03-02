@@ -1,0 +1,7 @@
+@font-face{font-family:'BebasNeueRegular';src:url(../fonts/BebasNeue-webfont.ttf#BebasNeueRegular);}
+body{font-family:BebasNeueRegular;text-align:center;color:#fff;text-shadow:0 0 5px #A9A9A9;}
+.container{width:100%;margin:0 auto;overflow:hidden;}
+.clock{font-size:1.5em;}
+#Date{font-size:38px;}
+ul{width:150px;margin:0 auto;padding:0;list-style:none;}
+ul li{display:inline;font-size:20px;}

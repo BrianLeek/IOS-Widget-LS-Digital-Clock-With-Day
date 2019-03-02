@@ -1,82 +1,19 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>LS Digital Clock With Day By Brian</title>
-<style type="text/css">
-@font-face {
-    font-family: 'BebasNeueRegular';
-    src: url('fonts/BebasNeue-webfont.eot');
-    src: url('fonts/BebasNeue-webfont.eot?#iefix') format('embedded-opentype'),
-         url('fonts/BebasNeue-webfont.woff') format('woff'),
-         url('fonts/BebasNeue-webfont.ttf') format('truetype'),
-         url('fonts/BebasNeue-webfont.svg#BebasNeueRegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.container {width: 100%; margin: 0 auto; overflow: hidden;}
-.clock {color:#fff; }
-.clock1 {font-size: 1.5em;}
-#Date { font-family: BebasNeueRegular;font-size: 38px;text-align: center;text-shadow: 0 0 5px #A9A9A9;}
-ul { width:150px; margin:0 auto; padding:0px; list-style:none; text-align:center; }
-ul li { display:inline; font-size:20px; text-align:center;font-family: BebasNeueRegular; text-shadow:0 0 5px #A9A9A9; }
-</style>
-
-<script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
-<script type="text/javascript">
-
-$(document).ready(function() {
-
-var monthNames = [ "Jan", "Feb.", "Mar.", "Apr.", "May", "June", "July", "Aug.", "Sept.", "Oct.", "Nov.", "Dec." ]; 
-var dayNames= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-var newDate = new Date();
-
-newDate.setDate(newDate.getDate());
-   
-$('#Date').html(dayNames[newDate.getDay()] + " " + monthNames[newDate.getMonth()] + ' ' + newDate.getDate() +'' +', ' + newDate.getFullYear());
-
-window.onload = function() {
-  clock();  
-    function clock() {
-    var now = new Date();
-    var TwentyFourHour = now.getHours();
-    var hour = now.getHours();
-    var min = now.getMinutes();
-    var seconds = new Date().getSeconds();
-    var mid = 'pm';
-    if (min < 10) {
-      min = "0" + min;
-    }
-    if (hour > 12) {
-      hour = hour - 12;
-    }    
-    if(hour==0){ 
-      hour=12;
-    }
-    if(TwentyFourHour < 12) {
-       mid = 'am';
-    }     
-  document.getElementById('time').innerHTML = '<div class="clock1">'+hour+':'+min+':'+seconds + ' ' +mid+'</div>';
-    setTimeout(clock, 1000);
-    }
-}
-	
-}); 
-</script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>LS Digital Clock With Day By Brian</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
 </head>
+
 <body>
-
-<div class="container">
-<div id="iphonescreen">
-<div class="clock">
-<div id="Date"></div>
-<ul>
-	<li id="time"> </li>
-</ul>
-
-</div>
-</div>
-</div>
+    <div class="container">
+        <div id="Date"></div>
+        <ul>
+            <li id="time"> </li>
+        </ul>
+    </div>
 </body>
 </html>
